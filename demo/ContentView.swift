@@ -1,5 +1,4 @@
 // The goal now - add a search bar
-// the goal now first - change the layout of the Book tab to be from category -> [Book] to String -> Book. There should be a static list of bookdata btw.
 // Finish the favorites menu
 // Set autozoom to 1.2x times the default zoom level when turning from portrait to landscape
 // Add a search functionality when hiding the big dictionary
@@ -24,7 +23,6 @@ struct PDFViewer: UIViewRepresentable {
     
     func updateUIView(_ uiView: PDFView, context: Context) {}
 }
-
 
 struct ContentView: View {
     
@@ -56,23 +54,38 @@ struct ContentView: View {
 struct BookListView: View {
     
     @Binding var isTabViewHidden: Bool
+    @State private var searchText: String = ""
     private let keyOrder = ["Poojan", "Path"]
+
     
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             List {
                 ForEach(keyOrder, id: \.self) { section in
                     Section(header: Text(section)) {
-                        ForEach(sections[section] ?? [], id: \.id) { book in
-                            NavigationLink(destination: PDFViewerScreen(pdfName: book.name, isTabViewHidden: $isTabViewHidden)) {
-                                Text(book.name)
-                            }
-                        }
+                        bookList(for: section, isTabViewHidden: $isTabViewHidden)
                     }
                 }
             }
             .navigationTitle("Jinendra Archana")
+            .searchable(text: $searchText, prompt: "Title Name")
             .toolbar { EditButton() }
+        }
+    }
+}
+
+@ViewBuilder
+private func bookList(for section: String, isTabViewHidden: Binding<Bool>) -> some View {
+    if let books = sections[section] {
+        ForEach(books, id: \.id) { book in
+            NavigationLink(destination: PDFViewerScreen(pdfName: book.name, isTabViewHidden: isTabViewHidden)) {
+                HStack {
+                    Text(book.name)
+                    Spacer()
+                    Text(book.author)
+                    Text("\(book.pgNum)")
+                }
+            }
         }
     }
 }
@@ -83,29 +96,29 @@ struct FavoritesView: View {
     @State private var isSelectingFavorites = false
     @State private var favoriteBooks: [String: [Book]] = [
         "poojan": [
-            Book(name: "Bhagavad Gita"),
-            Book(name: "Upanishads"),
-            Book(name: "The Yoga Sutras")
+            Book(name: "Bhagavad Gita", author: "Rick", pgNum: 5),
+            Book(name: "Upanishads", author: "Rick", pgNum: 5),
+            Book(name: "The Yoga Sutras", author: "Rick", pgNum: 5)
         ],
         "path": [
-            Book(name: "Atomic Habits"),
-            Book(name: "The Power of Now"),
-            Book(name: "Deep Work")
+            Book(name: "Atomic Habits", author: "Rick", pgNum: 5),
+            Book(name: "The Power of Now", author: "Rick", pgNum: 5),
+            Book(name: "Deep Work", author: "Rick", pgNum: 5)
         ],
         "sath": [
-            Book(name: "Atomic Habits"),
-            Book(name: "The Power of Now"),
-            Book(name: "Deep Work")
+            Book(name: "Atomic Habits", author: "Rick", pgNum: 5),
+            Book(name: "The Power of Now", author: "Rick", pgNum: 5),
+            Book(name: "Deep Work", author: "Rick", pgNum: 5)
         ],
         "dath": [
-            Book(name: "Atomic Habits"),
-            Book(name: "The Power of Now"),
-            Book(name: "Deep Work")
+            Book(name: "Atomic Habits", author: "Rick", pgNum: 5),
+            Book(name: "The Power of Now", author: "Rick", pgNum: 5),
+            Book(name: "Deep Work", author: "Rick", pgNum: 5)
         ],
         "qath": [
-            Book(name: "Atomic Habits"),
-            Book(name: "The Power of Now"),
-            Book(name: "Deep Work")
+            Book(name: "Atomic Habits", author: "Rick", pgNum: 5),
+            Book(name: "The Power of Now", author: "Rick", pgNum: 5),
+            Book(name: "Deep Work", author: "Rick", pgNum: 5)
         ]
     ]
     

@@ -76,6 +76,4 @@ private func sectionList(for section: String, books: [Book], isTabViewHidden: Bi
 }
 
 
-#Preview {
-    ContentView()
-}
+

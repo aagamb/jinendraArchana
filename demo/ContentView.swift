@@ -1,4 +1,4 @@
-// The goal now - add a search bar
+// The goal now - add a search bar which works
 // Finish the favorites menu
 // Set autozoom to 1.2x times the default zoom level when turning from portrait to landscape
 // Add a search functionality when hiding the big dictionary
@@ -32,8 +32,6 @@ struct ContentView: View {
         
     }
 }
-
-
 
 #Preview {
     ContentView()

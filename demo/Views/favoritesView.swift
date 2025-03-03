@@ -14,31 +14,32 @@ struct FavoritesView: View {
     @State private var isSelectingFavorites = false
     @State private var favoriteBooks: [String: [Book]] = [
         "poojan": [
-            Book(name: "Bhagavad Gita", author: "Rick", pgNum: 5),
-            Book(name: "Upanishads", author: "Rick", pgNum: 5),
-            Book(name: "The Yoga Sutras", author: "Rick", pgNum: 5)
+            Book(name: "Bhagavad Gita", hindiName: "भगवद गीता", author: "Rick", pgNum: 5),
+            Book(name: "Upanishads", hindiName: "उपनिषद", author: "Rick", pgNum: 5),
+            Book(name: "The Yoga Sutras", hindiName: "योग सूत्र", author: "Rick", pgNum: 5)
         ],
         "path": [
-            Book(name: "Atomic Habits", author: "Rick", pgNum: 5),
-            Book(name: "The Power of Now", author: "Rick", pgNum: 5),
-            Book(name: "Deep Work", author: "Rick", pgNum: 5)
+            Book(name: "Atomic Habits", hindiName: "एटॉमिक हैबिट्स", author: "Rick", pgNum: 5),
+            Book(name: "The Power of Now", hindiName: "द पावर ऑफ़ नाउ", author: "Rick", pgNum: 5),
+            Book(name: "Deep Work", hindiName: "डीप वर्क", author: "Rick", pgNum: 5)
         ],
         "sath": [
-            Book(name: "Atomic Habits", author: "Rick", pgNum: 5),
-            Book(name: "The Power of Now", author: "Rick", pgNum: 5),
-            Book(name: "Deep Work", author: "Rick", pgNum: 5)
+            Book(name: "Atomic Habits", hindiName: "एटॉमिक हैबिट्स", author: "Rick", pgNum: 5),
+            Book(name: "The Power of Now", hindiName: "द पावर ऑफ़ नाउ", author: "Rick", pgNum: 5),
+            Book(name: "Deep Work", hindiName: "डीप वर्क", author: "Rick", pgNum: 5)
         ],
         "dath": [
-            Book(name: "Atomic Habits", author: "Rick", pgNum: 5),
-            Book(name: "The Power of Now", author: "Rick", pgNum: 5),
-            Book(name: "Deep Work", author: "Rick", pgNum: 5)
+            Book(name: "Atomic Habits", hindiName: "एटॉमिक हैबिट्स", author: "Rick", pgNum: 5),
+            Book(name: "The Power of Now", hindiName: "द पावर ऑफ़ नाउ", author: "Rick", pgNum: 5),
+            Book(name: "Deep Work", hindiName: "डीप वर्क", author: "Rick", pgNum: 5)
         ],
         "qath": [
-            Book(name: "Atomic Habits", author: "Rick", pgNum: 5),
-            Book(name: "The Power of Now", author: "Rick", pgNum: 5),
-            Book(name: "Deep Work", author: "Rick", pgNum: 5)
+            Book(name: "Atomic Habits", hindiName: "एटॉमिक हैबिट्स", author: "Rick", pgNum: 5),
+            Book(name: "The Power of Now", hindiName: "द पावर ऑफ़ नाउ", author: "Rick", pgNum: 5),
+            Book(name: "Deep Work", hindiName: "डीप वर्क", author: "Rick", pgNum: 5)
         ]
     ]
+
     
     var body: some View {
         NavigationStack {

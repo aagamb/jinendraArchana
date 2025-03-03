@@ -12,6 +12,7 @@
 		68A91E862D6D4F2500155511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A91E852D6D4F2500155511 /* Assets.xcassets */; };
 		68A91E8A2D6D4F2500155511 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A91E892D6D4F2500155511 /* Preview Assets.xcassets */; };
 		68A91E922D6D755D00155511 /* Jinendra Archana.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 68A91E912D6D755D00155511 /* Jinendra Archana.pdf */; };
+		68B08BB02D7629D100DF5E6A /* Fuse in Frameworks */ = {isa = PBXBuildFile; productRef = 68B08BAF2D7629D100DF5E6A /* Fuse */; };
 		68B735232D70F90500D26A37 /* favoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B735222D70F90500D26A37 /* favoritesView.swift */; };
 		68B735252D70F95C00D26A37 /* FavoritesSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B735242D70F95C00D26A37 /* FavoritesSelectionView.swift */; };
 		68B735272D70FA4800D26A37 /* PDFViewerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B735262D70FA4800D26A37 /* PDFViewerScreen.swift */; };
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68B08BB02D7629D100DF5E6A /* Fuse in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				68A91E912D6D755D00155511 /* Jinendra Archana.pdf */,
-				68B7352A2D70FB2900D26A37 /* PDFViewer.swift */,
 			);
 			path = PDFs;
 			sourceTree = "<group>";
@@ -99,9 +100,9 @@
 		68B735112D70F3EC00D26A37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				68B735262D70FA4800D26A37 /* PDFViewerScreen.swift */,
 				68B735222D70F90500D26A37 /* favoritesView.swift */,
 				68B735242D70F95C00D26A37 /* FavoritesSelectionView.swift */,
-				68B735262D70FA4800D26A37 /* PDFViewerScreen.swift */,
 				68B735282D70FA9800D26A37 /* BookListView.swift */,
 			);
 			path = Views;
@@ -118,6 +119,7 @@
 		68B735172D70F54D00D26A37 /* UIViewRepresentable */ = {
 			isa = PBXGroup;
 			children = (
+				68B7352A2D70FB2900D26A37 /* PDFViewer.swift */,
 			);
 			path = UIViewRepresentable;
 			sourceTree = "<group>";
@@ -138,6 +140,9 @@
 			dependencies = (
 			);
 			name = demo;
+			packageProductDependencies = (
+				68B08BAF2D7629D100DF5E6A /* Fuse */,
+			);
 			productName = demo;
 			productReference = 68A91E7E2D6D4F2400155511 /* demo.app */;
 			productType = "com.apple.product-type.application";
@@ -166,6 +171,9 @@
 				Base,
 			);
 			mainGroup = 68A91E752D6D4F2400155511;
+			packageReferences = (
+				68B08BAE2D7629D100DF5E6A /* XCRemoteSwiftPackageReference "fuse-swift" */,
+			);
 			productRefGroup = 68A91E7F2D6D4F2400155511 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -419,6 +427,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		68B08BAE2D7629D100DF5E6A /* XCRemoteSwiftPackageReference "fuse-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krisk/fuse-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		68B08BAF2D7629D100DF5E6A /* Fuse */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68B08BAE2D7629D100DF5E6A /* XCRemoteSwiftPackageReference "fuse-swift" */;
+			productName = Fuse;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 68A91E762D6D4F2400155511 /* Project object */;
 }

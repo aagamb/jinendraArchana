@@ -11,8 +11,9 @@
 		68A91E842D6D4F2400155511 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A91E832D6D4F2400155511 /* ContentView.swift */; };
 		68A91E862D6D4F2500155511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A91E852D6D4F2500155511 /* Assets.xcassets */; };
 		68A91E8A2D6D4F2500155511 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A91E892D6D4F2500155511 /* Preview Assets.xcassets */; };
-		68A91E922D6D755D00155511 /* Jinendra Archana.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 68A91E912D6D755D00155511 /* Jinendra Archana.pdf */; };
 		68B08BB02D7629D100DF5E6A /* Fuse in Frameworks */ = {isa = PBXBuildFile; productRef = 68B08BAF2D7629D100DF5E6A /* Fuse */; };
+		68B08C5C2D7654C600DF5E6A /* PDFs in Resources */ = {isa = PBXBuildFile; fileRef = 68B08C5B2D7654C600DF5E6A /* PDFs */; };
+		68B08C5E2D765AC300DF5E6A /* Jinendra Archana.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 68B08C5D2D765AC300DF5E6A /* Jinendra Archana.pdf */; };
 		68B735232D70F90500D26A37 /* favoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B735222D70F90500D26A37 /* favoritesView.swift */; };
 		68B735252D70F95C00D26A37 /* FavoritesSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B735242D70F95C00D26A37 /* FavoritesSelectionView.swift */; };
 		68B735272D70FA4800D26A37 /* PDFViewerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B735262D70FA4800D26A37 /* PDFViewerScreen.swift */; };
@@ -28,7 +29,8 @@
 		68A91E852D6D4F2500155511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68A91E872D6D4F2500155511 /* demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = demo.entitlements; sourceTree = "<group>"; };
 		68A91E892D6D4F2500155511 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		68A91E912D6D755D00155511 /* Jinendra Archana.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Jinendra Archana.pdf"; sourceTree = "<group>"; };
+		68B08C5B2D7654C600DF5E6A /* PDFs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PDFs; sourceTree = "<group>"; };
+		68B08C5D2D765AC300DF5E6A /* Jinendra Archana.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Jinendra Archana.pdf"; sourceTree = "<group>"; };
 		68B735222D70F90500D26A37 /* favoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoritesView.swift; sourceTree = "<group>"; };
 		68B735242D70F95C00D26A37 /* FavoritesSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSelectionView.swift; sourceTree = "<group>"; };
 		68B735262D70FA4800D26A37 /* PDFViewerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewerScreen.swift; sourceTree = "<group>"; };
@@ -68,11 +70,12 @@
 		68A91E802D6D4F2400155511 /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				68B08C5B2D7654C600DF5E6A /* PDFs */,
 				68B735172D70F54D00D26A37 /* UIViewRepresentable */,
 				68B735162D70F4E100D26A37 /* Models */,
 				68B735112D70F3EC00D26A37 /* Views */,
-				68A91E902D6D753400155511 /* PDFs */,
 				68A91E812D6D4F2400155511 /* demoApp.swift */,
+				68B08C5D2D765AC300DF5E6A /* Jinendra Archana.pdf */,
 				68A91E832D6D4F2400155511 /* ContentView.swift */,
 				68A91E852D6D4F2500155511 /* Assets.xcassets */,
 				68A91E872D6D4F2500155511 /* demo.entitlements */,
@@ -87,14 +90,6 @@
 				68A91E892D6D4F2500155511 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		68A91E902D6D753400155511 /* PDFs */ = {
-			isa = PBXGroup;
-			children = (
-				68A91E912D6D755D00155511 /* Jinendra Archana.pdf */,
-			);
-			path = PDFs;
 			sourceTree = "<group>";
 		};
 		68B735112D70F3EC00D26A37 /* Views */ = {
@@ -188,7 +183,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68A91E922D6D755D00155511 /* Jinendra Archana.pdf in Resources */,
+				68B08C5C2D7654C600DF5E6A /* PDFs in Resources */,
+				68B08C5E2D765AC300DF5E6A /* Jinendra Archana.pdf in Resources */,
 				68A91E8A2D6D4F2500155511 /* Preview Assets.xcassets in Resources */,
 				68A91E862D6D4F2500155511 /* Assets.xcassets in Resources */,
 			);

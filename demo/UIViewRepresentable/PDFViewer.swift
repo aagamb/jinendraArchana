@@ -17,10 +17,16 @@ struct PDFViewer: UIViewRepresentable {
         let pdfView = PDFView()
         pdfView.autoScales = false
         pdfView.displaysPageBreaks = false
+        print("\(pdfName)")
         
-        if let pdfURL = Bundle.main.url(forResource: pdfName, withExtension: "pdf") {
-            pdfView.document = PDFDocument(url: pdfURL)
+        if let pdfURL = Bundle.main.resourceURL?.appendingPathComponent("PDFs/\(pdfName).pdf") {
+            if FileManager.default.fileExists(atPath: pdfURL.path) {
+                pdfView.document = PDFDocument(url: pdfURL)
+            } else {
+                print("PDF not found at path: \(pdfURL.path)")
+            }
         }
+
         return pdfView
     }
     

@@ -13,13 +13,13 @@ import Fuse
 /// Function to filter books based on search text using fuzzy logic
 func filteredBooks(from books: [Book], searchText: String) -> [Book] {
     if searchText.isEmpty {
-        return books  // Show all books when search is empty
+        return books
     } else {
-        let fuse = Fuse()  // Create a Fuse instance
+        let fuse = Fuse()
 
         return books.filter { book in
             if let _ = fuse.search(searchText, in: book.name) {
-                return true  // Keep books that have a fuzzy match
+                return true
             }
             return false
         }
@@ -31,7 +31,7 @@ struct BookListView: View {
     
     @Binding var isTabViewHidden: Bool
     @State private var searchText: String = ""
-    private let keyOrder = ["Poojan", "Path"]
+    private let keyOrder = ["Stavan", "Poojan", "Adhyatmik Path", "Bhakti"]
     
     var body: some View {
         NavigationStack {
@@ -50,6 +50,7 @@ struct BookListView: View {
             }
             .navigationTitle("Jinendra Archana")
             .searchable(text: $searchText, prompt: "Title Name")
+            .autocorrectionDisabled(true)
         }
     }
 }
@@ -64,7 +65,7 @@ private func sectionList(for section: String, books: [Book], isTabViewHidden: Bi
                 Text(book.author)
                     .italic()
                     .foregroundStyle(.gray)
-                    .frame(width: 100, alignment: .trailing)
+                    .frame(width: 100, alignment: .leading)
                     .lineLimit(2)
                 Text("\(book.pgNum)")
                     .frame(width:40, height: 10, alignment: .trailing)

@@ -7,25 +7,43 @@
 
 import Foundation
 import SwiftUI
-import Fuse
 
 
-/// Function to filter books based on search text using fuzzy logic
+///// Function to filter books based on search text
 func filteredBooks(from books: [Book], searchText: String) -> [Book] {
     if searchText.isEmpty {
         return books
-    } else {
-        let fuse = Fuse()
-
-        return books.filter { book in
-            if let _ = fuse.search(searchText, in: book.name) {
-                return true
+    }
+    else {
+        var filteredBooks : [Book] = []
+        for book in books {
+            let bookSubSeq = book.name.prefix(searchText.count)
+            if levenshteinDistance(bookSubSeq.lowercased(), searchText.lowercased()) <= 3 {
+                filteredBooks.append(book)
             }
-            return false
         }
+        return filteredBooks
+            
     }
 }
 
+func levenshteinDistance(_ s1: String, _ s2: String) -> Int {
+    let empty = Array(repeating: 0, count: s2.count + 1)
+    var previous = [Int](0...s2.count)
+    var current = empty
+
+    for (i, char1) in s1.enumerated() {
+        current[0] = i + 1
+
+        for (j, char2) in s2.enumerated() {
+            current[j + 1] = char1 == char2
+                ? previous[j]
+                : min(previous[j], previous[j + 1], current[j]) + 1
+        }
+        previous = current
+    }
+    return previous[s2.count]
+}
 
 struct BookListView: View {
     
@@ -56,7 +74,7 @@ struct BookListView: View {
 }
 
 @ViewBuilder
-private func sectionList(for section: String, books: [Book], isTabViewHidden: Binding<Bool>) -> some View {
+func sectionList(for section: String, books: [Book], isTabViewHidden: Binding<Bool>) -> some View {
     ForEach(books, id: \.id) { book in
         NavigationLink(destination: PDFViewerScreen(pdfName: book.name, isTabViewHidden: isTabViewHidden)) {
             HStack {

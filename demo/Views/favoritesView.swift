@@ -13,36 +13,23 @@ struct FavoritesView: View {
     @Binding var isTabViewHidden: Bool
     @State private var isSelectingFavorites = false
     @State private var favoriteBooks: [String: [Book]] = [
-        "poojan": [
+        "Poojan": [
             Book(name: "Bhagavad Gita", hindiName: "भगवद गीता", author: "Rick", pgNum: 5),
             Book(name: "Upanishads", hindiName: "उपनिषद", author: "Rick", pgNum: 5),
             Book(name: "The Yoga Sutras", hindiName: "योग सूत्र", author: "Rick", pgNum: 5)
         ],
-        "path": [
-            Book(name: "Atomic Habits", hindiName: "एटॉमिक हैबिट्स", author: "Rick", pgNum: 5),
-            Book(name: "The Power of Now", hindiName: "द पावर ऑफ़ नाउ", author: "Rick", pgNum: 5),
-            Book(name: "Deep Work", hindiName: "डीप वर्क", author: "Rick", pgNum: 5)
-        ],
-        "sath": [
-            Book(name: "Atomic Habits", hindiName: "एटॉमिक हैबिट्स", author: "Rick", pgNum: 5),
-            Book(name: "The Power of Now", hindiName: "द पावर ऑफ़ नाउ", author: "Rick", pgNum: 5),
-            Book(name: "Deep Work", hindiName: "डीप वर्क", author: "Rick", pgNum: 5)
-        ],
-        "dath": [
-            Book(name: "Atomic Habits", hindiName: "एटॉमिक हैबिट्स", author: "Rick", pgNum: 5),
-            Book(name: "The Power of Now", hindiName: "द पावर ऑफ़ नाउ", author: "Rick", pgNum: 5),
-            Book(name: "Deep Work", hindiName: "डीप वर्क", author: "Rick", pgNum: 5)
-        ],
-        "qath": [
+        "Stavan": [
             Book(name: "Atomic Habits", hindiName: "एटॉमिक हैबिट्स", author: "Rick", pgNum: 5),
             Book(name: "The Power of Now", hindiName: "द पावर ऑफ़ नाउ", author: "Rick", pgNum: 5),
             Book(name: "Deep Work", hindiName: "डीप वर्क", author: "Rick", pgNum: 5)
         ]
     ]
-
+    @State private var searchText: String = ""
     
     var body: some View {
+        
         NavigationStack {
+            // if no favorites selected yet
             if favoriteBooks.isEmpty {
                 VStack {
                     Image(systemName: "star.slash")
@@ -64,26 +51,25 @@ struct FavoritesView: View {
                             .padding()
                     }
                 }
-            } else {
+            } else { // some favorites exist
                 ZStack{
-                    let keyOrder = ["poojan", "path", "sath", "dath", "qath"]
+                    let keyOrder = ["Stavan", "Poojan", "Adhyatmik Path", "Bhakti"]
                     List {
-                        ForEach(keyOrder, id: \.self) { key in
-                            if let books = favoriteBooks[key] {
-                                Section(header: Text(key.capitalized)) {
-                                    ForEach(books) { book in
-                                        NavigationLink(destination: PDFViewerScreen(pdfName: book.name, isTabViewHidden: $isTabViewHidden)) {
-                                            Text(book.name)
-                                        }
+                        ForEach(keyOrder, id: \.self) { section in
+                            if let books = favoriteBooks[section] {
+                                let filtered = filteredBooks(from: books, searchText: searchText)
+
+                                if !filtered.isEmpty {  // Only show non-empty sections
+                                    Section(header: Text(section.capitalized)) {
+                                        sectionList(for: section, books: filtered, isTabViewHidden: $isTabViewHidden)
                                     }
                                 }
-                                
                             }
                         }
-                    }
-                    .navigationTitle("Favorites")
-                    .sheet(isPresented: $isSelectingFavorites) {
-                        FavoritesSelectionView(favoriteBooks: $favoriteBooks, isSelectingFavorites: $isSelectingFavorites)
+                        .navigationTitle("Favorites")
+                        .sheet(isPresented: $isSelectingFavorites) {
+                            FavoritesSelectionView(favoriteBooks: $favoriteBooks)
+                        }
                     }
                     
                     // Floating Button (Bottom-Right)
@@ -112,7 +98,12 @@ struct FavoritesView: View {
                 }
             }
         }
+        .searchable(text: $searchText, prompt: "Title Name")
+        .autocorrectionDisabled(true)
     }
 }
 
 
+#Preview {
+    FavoritesView(isTabViewHidden: .constant(false))
+}

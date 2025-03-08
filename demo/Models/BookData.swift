@@ -7,13 +7,22 @@
 
 import Foundation
 
-struct Book: Hashable, Identifiable{
+struct Book: Hashable, Identifiable, Codable {
     let name: String
     let hindiName: String
     let author: String
     let pgNum: Int
-    let id = UUID()
+    let id: UUID?
+    
+    init(name: String, hindiName: String, author: String, pgNum: Int, id: UUID? = UUID()) {
+        self.name = name
+        self.hindiName = hindiName
+        self.author = author
+        self.pgNum = pgNum
+        self.id = id
+    }
 }
+
 
 //struct Category: Hashable, Identifiable{
 //    let name: String

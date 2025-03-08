@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-///// Function to filter books based on search text
+///Function to filter books based on search text
 func filteredBooks(from books: [Book], searchText: String) -> [Book] {
     if searchText.isEmpty {
         return books
@@ -27,6 +27,7 @@ func filteredBooks(from books: [Book], searchText: String) -> [Book] {
     }
 }
 
+///Function to calculate the which books to be filtered
 func levenshteinDistance(_ s1: String, _ s2: String) -> Int {
     let empty = Array(repeating: 0, count: s2.count + 1)
     var previous = [Int](0...s2.count)

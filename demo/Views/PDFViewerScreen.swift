@@ -13,58 +13,70 @@ struct PDFViewerScreen: View {
     @State private var isNavBarHidden = false
     @Binding var isTabViewHidden: Bool
     @Environment(\.dismiss) private var dismiss
+    @State private var orientation: UIDeviceOrientation = UIDevice.current.orientation
     
     var body: some View {
         ZStack(alignment: .top) {
-            PDFViewer(pdfName: pdfName, isNavBarHidden: $isNavBarHidden)
-                .ignoresSafeArea(edges: [.bottom, .leading, .trailing])
-                .onTapGesture {
-                    isNavBarHidden.toggle()
-                }
-                .onAppear {
-                    isTabViewHidden = true
-                }
-                .onDisappear {
-                    isTabViewHidden = false
-                }
-                //enable swiping to go to the previous screen
-                .gesture(DragGesture()
-                    .onEnded { value in
-                        if value.translation.width>100 {
-                            dismiss()
-                        }
+            GeometryReader{geometry in
+                PDFViewer(pdfName: pdfName, isNavBarHidden: $isNavBarHidden)
+                    .ignoresSafeArea(edges: [.bottom, .leading, .trailing])
+                    .onTapGesture {
+                        isNavBarHidden.toggle()
                     }
-                )
+                    .onAppear {
+                        isTabViewHidden = true
+                    }
+                    .onDisappear {
+                        isTabViewHidden = false
+                    }
+                    .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+                        orientation = UIDevice.current.orientation
+                    }
+                    
+                    .gesture(DragGesture()
+                        .onEnded { value in
+                            if value.translation.width>100 {
+                                dismiss()
+                            }
+                        }
+                    )
+            }
+            
             
             if !isNavBarHidden {
-                VStack(spacing: 0) {
-                    HStack {
-                        Button(action: {
-                            dismiss()
-                        }) {
-                            Image(systemName: "chevron.left")
-                                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                            Text("Back")
-                                .foregroundColor(.blue)
-                        }
-                        .padding(.top, 5)
-                        .padding(.leading,20)
-                        .padding(.bottom, 20)
-                        Spacer()
-                        
-                    }
-                    .background(Color.white)
-                }
-                .frame(maxWidth: .infinity)
-                .background(Color.clear)
+                toolbarView()
             }
         }
         .toolbar(.hidden , for: .tabBar, .navigationBar)
         .animation(.easeInOut(duration: 0.5), value: isNavBarHidden)
-        //        .toolbar(isNavBarHidden ? .hidden: .visible, for: .navigationBar)
         
         
     }
+    
+    private func toolbarView() -> some View {
+        VStack(spacing: 0) {
+            HStack {
+                Button(action: {
+                    dismiss()
+                }) {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    Text("Back")
+                        .foregroundColor(.blue)
+                }
+                .padding(.top, 5)
+                .padding(.leading,20)
+                .padding(.bottom, 20)
+                Spacer()
+                
+            }
+            .background(Color.white)
+        }
+        .frame(maxWidth: .infinity)
+        .background(Color.clear)
+    }
+    
+    
 }
 
 #Preview {

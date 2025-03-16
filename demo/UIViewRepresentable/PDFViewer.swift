@@ -12,11 +12,12 @@ import PDFKit
 struct PDFViewer: UIViewRepresentable {
     let pdfName: String
     @Binding var isNavBarHidden: Bool
-    @State private var orientation: UIDeviceOrientation = UIDevice.current.orientation
+//    @State private var orientation: UIDeviceOrientation = UIDevice.current.orientation
+    @Binding var orientation: UIDeviceOrientation
     
     func makeUIView(context: Context) -> PDFView {
         let pdfView = PDFView()
-        pdfView.autoScales = true
+        pdfView.autoScales = false
         pdfView.displaysPageBreaks = false
         
         pdfView.minScaleFactor = 1.0  // Minimum zoom level
@@ -31,14 +32,14 @@ struct PDFViewer: UIViewRepresentable {
             }
         }
         
-        adjustZoom(pdfView: pdfView, orientation: UIDevice.current.orientation)
+        adjustZoom(pdfView: pdfView, orientation: orientation)
         
         return pdfView
     }
     
     func updateUIView(_ uiView: PDFView, context: Context) {
         DispatchQueue.main.async {
-            adjustZoom(pdfView: uiView, orientation: UIDevice.current.orientation)
+            adjustZoom(pdfView: uiView, orientation: orientation)
         }
     }
     

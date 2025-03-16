@@ -14,6 +14,7 @@ struct FavoritesView: View {
     @State private var isSelectingFavorites = false
     @State private var favoriteBooks: [String: [Book]] = [:]
     @State private var searchText: String = ""
+    @State private var collapsedSections: Set<String> = []
     
     var body: some View {
         
@@ -71,14 +72,41 @@ struct FavoritesView: View {
                     if let books = favoriteBooks[section] {
                         let filtered = filteredBooks(from: books, searchText: searchText)
                         if !filtered.isEmpty {
-                            Section(header: Text(section.capitalized)) {
-                                sectionList(for: section, books: filtered, isTabViewHidden: $isTabViewHidden)
+                            Section(header: sectionHeader(for: section)) {
+                                if !collapsedSections.contains(section) {
+                                    ForEach(filtered, id: \.id) { book in
+                                        NavigationLink(destination: PDFViewerScreen(pdfName: book.name, isTabViewHidden: $isTabViewHidden)) {
+                                            // each row in the view showing each book
+                                            HStack {
+                                                Text(book.hindiName)
+                                                Spacer()
+                                                Text(book.author)
+                                                    .italic()
+                                                    .foregroundStyle(.gray)
+                                                    .frame(width: 100, alignment: .leading)
+                                                    .lineLimit(2)
+                                                Text("\(book.pgNum)")
+                                                    .frame(width:40, height: 10, alignment: .trailing)
+                                                    .padding(.trailing, 0)
+                                            }
+                                        }
+                                    }
+                                    .onDelete { indexSet in
+                                        deleteBook(from: section, at: indexSet)
+                                    }
+                                    .onMove { source, destination in
+                                        moveBook(in: section, from: source, to: destination)
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
             .navigationTitle("Favorites")
+            .toolbar {
+                EditButton() // enables reordering
+            }
 
             floatingAddButton()
         }
@@ -129,6 +157,45 @@ struct FavoritesView: View {
         }
     }
     
+    // To handle section movements
+    private func sectionHeader(for section: String) -> some View {
+        HStack {
+            Text(section.capitalized)
+                .font(.headline)
+            Spacer()
+            Image(systemName: collapsedSections.contains(section) ? "chevron.down" : "chevron.up")
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            toggleSectionCollapse(section)
+        }
+    }
+    
+    /// Toggle collapsed State of a Section
+    private func toggleSectionCollapse(_ section: String) {
+        if collapsedSections.contains(section) {
+            collapsedSections.remove(section)
+        } else {
+            collapsedSections.insert(section)
+        }
+    }
+    
+    /// Move books within a section
+    private func moveBook(in section: String, from source: IndexSet, to destination: Int) {
+        if var books = favoriteBooks[section] {
+            books.move(fromOffsets: source, toOffset: destination)
+            favoriteBooks[section] = books
+        }
+    }
+    
+    /// delete books from the favorite Books section
+    private func deleteBook(from section: String, at offsets: IndexSet) {
+        if let books = favoriteBooks[section] {
+            var updatedBooks = books
+            updatedBooks.remove(atOffsets: offsets)
+            favoriteBooks[section] = updatedBooks.isEmpty ? nil : updatedBooks
+        }
+    }
 }
 
 
@@ -137,3 +204,7 @@ struct FavoritesView: View {
 #Preview {
     FavoritesView(isTabViewHidden: .constant(false))
 }
+
+
+
+

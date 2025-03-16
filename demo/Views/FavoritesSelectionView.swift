@@ -20,13 +20,17 @@ struct FavoritesSelectionView: View {
     
     var body: some View{
         NavigationStack{
-            List{
+            List {
                 ForEach(keyOrder, id: \.self) { section in
                     if let books = sections[section] {
-                        Section(header: Text(section.capitalized)) {
-                            ForEach(books, id: \.self) { book in
-                                let isBookInFavorites = favoriteBooks[section]?.contains(book) == true
-                                MultipleSelectionRowView(book: book, section:section, selectedBooks:$selectedBooks, isBookInFavorites: isBookInFavorites)
+                        let filtered = filteredBooks(from: books, searchText: searchText) // Function from BookListView
+
+                        if !filtered.isEmpty {
+                            Section(header: Text(section.capitalized)) {
+                                ForEach(filtered, id: \.self) { book in
+                                    let isBookInFavorites = favoriteBooks[section]?.contains(book) == true
+                                    MultipleSelectionRowView(book: book, section: section, selectedBooks: $selectedBooks, isBookInFavorites: isBookInFavorites)
+                                }
                             }
                         }
                     }

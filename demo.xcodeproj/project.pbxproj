@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		686AB48F2D8685A00063B65A /* JJFloatingActionButton in Frameworks */ = {isa = PBXBuildFile; productRef = 686AB48E2D8685A00063B65A /* JJFloatingActionButton */; };
 		6890C06B2D76758800D7FDAD /* PDFs in Resources */ = {isa = PBXBuildFile; fileRef = 6890C06A2D76758800D7FDAD /* PDFs */; };
 		68A91E822D6D4F2400155511 /* demoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A91E812D6D4F2400155511 /* demoApp.swift */; };
 		68A91E842D6D4F2400155511 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A91E832D6D4F2400155511 /* ContentView.swift */; };
@@ -43,12 +44,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				686AB48F2D8685A00063B65A /* JJFloatingActionButton in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		686AB4942D8780820063B65A /* UIViewControllerRepresentable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIViewControllerRepresentable;
+			sourceTree = "<group>";
+		};
 		68A91E752D6D4F2400155511 = {
 			isa = PBXGroup;
 			children = (
@@ -68,12 +77,13 @@
 		68A91E802D6D4F2400155511 /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				686AB4942D8780820063B65A /* UIViewControllerRepresentable */,
 				6890C06A2D76758800D7FDAD /* PDFs */,
 				68B735172D70F54D00D26A37 /* UIViewRepresentable */,
 				68B735162D70F4E100D26A37 /* Models */,
 				68B735112D70F3EC00D26A37 /* Views */,
-				68A91E812D6D4F2400155511 /* demoApp.swift */,
 				68B08C5D2D765AC300DF5E6A /* Jinendra Archana.pdf */,
+				68A91E812D6D4F2400155511 /* demoApp.swift */,
 				68A91E832D6D4F2400155511 /* ContentView.swift */,
 				68A91E852D6D4F2500155511 /* Assets.xcassets */,
 				68A91E872D6D4F2500155511 /* demo.entitlements */,
@@ -134,6 +144,7 @@
 			);
 			name = demo;
 			packageProductDependencies = (
+				686AB48E2D8685A00063B65A /* JJFloatingActionButton */,
 			);
 			productName = demo;
 			productReference = 68A91E7E2D6D4F2400155511 /* demo.app */;
@@ -164,6 +175,7 @@
 			);
 			mainGroup = 68A91E752D6D4F2400155511;
 			packageReferences = (
+				686AB48D2D8685A00063B65A /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */,
 			);
 			productRefGroup = 68A91E7F2D6D4F2400155511 /* Products */;
 			projectDirPath = "";
@@ -419,6 +431,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		686AB48D2D8685A00063B65A /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jjochen/JJFloatingActionButton";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		686AB48E2D8685A00063B65A /* JJFloatingActionButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 686AB48D2D8685A00063B65A /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */;
+			productName = JJFloatingActionButton;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 68A91E762D6D4F2400155511 /* Project object */;
 }

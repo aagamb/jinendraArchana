@@ -1,7 +1,8 @@
 // Goals
-// Finish the favorites menu
-// Add a search functionality when hiding the big dictionary
-// make the sections collapsible
+// Implement Auto-scroll , which stops when the phone is kept horizontally
+// Implement Feedback, for beta testers
+// Night mode
+//  FAB button should work
 
 import SwiftUI
 import PDFKit

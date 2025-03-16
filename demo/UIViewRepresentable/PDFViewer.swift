@@ -12,16 +12,12 @@ import PDFKit
 struct PDFViewer: UIViewRepresentable {
     let pdfName: String
     @Binding var isNavBarHidden: Bool
-//    @State private var orientation: UIDeviceOrientation = UIDevice.current.orientation
     @Binding var orientation: UIDeviceOrientation
     
     func makeUIView(context: Context) -> PDFView {
         let pdfView = PDFView()
         pdfView.autoScales = false
         pdfView.displaysPageBreaks = false
-        
-        pdfView.minScaleFactor = 1.0  // Minimum zoom level
-        pdfView.maxScaleFactor = 3.0  // Maximum zoom level
         
         if let pdfURL = Bundle.main.resourceURL?.appendingPathComponent("PDFs/\(pdfName).pdf") {
             if FileManager.default.fileExists(atPath: pdfURL.path) {
@@ -31,6 +27,10 @@ struct PDFViewer: UIViewRepresentable {
                 print("PDF not found at path: \(pdfURL.path)")
             }
         }
+        
+        pdfView.minScaleFactor = 1.0  // Minimum zoom level
+        pdfView.maxScaleFactor = 3.0  // Maximum zoom level
+        pdfView.scaleFactor = 1.1     // Default zoom level
         
         adjustZoom(pdfView: pdfView, orientation: orientation)
         
@@ -45,10 +45,11 @@ struct PDFViewer: UIViewRepresentable {
     
     private func adjustZoom(pdfView: PDFView, orientation: UIDeviceOrientation){
         let portraitZoom: CGFloat = 1.1
-        let landscapeZoom: CGFloat = 2.0
+        let landscapeZoom: CGFloat = 2.3
         
         if orientation.isLandscape {
-            pdfView.scaleFactor = landscapeZoom
+//            pdfView.scaleFactor = landscapeZoom
+            pdfView.scaleFactor = pdfView.scaleFactorForSizeToFit * 1.2
             print("Landscape mode: Zoom set to \(landscapeZoom)x")
         } else if orientation.isPortrait {
             pdfView.scaleFactor = portraitZoom

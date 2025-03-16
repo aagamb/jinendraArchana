@@ -51,6 +51,8 @@ struct BookListView: View {
     @Binding var isTabViewHidden: Bool
     @State private var searchText: String = ""
     private let keyOrder = ["Stavan", "Poojan", "Adhyatmik Path", "Bhakti"]
+    @State private var collapsedSections: Set<String> = []
+//    @Binding var isAutoScrolling: Bool
     
     var body: some View {
         NavigationStack {
@@ -60,16 +62,45 @@ struct BookListView: View {
                         let filtered = filteredBooks(from: books, searchText: searchText)  // Filter books
 
                         if !filtered.isEmpty {  // Only show non-empty sections
-                            Section(header: Text(section)) {
-                                sectionList(for: section, books: filtered, isTabViewHidden: $isTabViewHidden)
+                            Section(header: sectionHeader(for: section)) {
+                                if !collapsedSections.contains(section) {
+                                    sectionList(for: section, books: filtered, isTabViewHidden: $isTabViewHidden)
+                                }
                             }
+                            .transition(.opacity.combined(with: .move(edge: .top)))
                         }
                     }
                 }
             }
+            .animation(.default, value: collapsedSections)
             .navigationTitle("Jinendra Archana")
             .searchable(text: $searchText, prompt: "Title Name")
             .autocorrectionDisabled(true)
+        }
+    }
+    
+    // To handle section movements
+    private func sectionHeader(for section: String) -> some View {
+        HStack {
+            Text(section.capitalized)
+                .font(.headline)
+            Spacer()
+            Image(systemName: collapsedSections.contains(section) ? "chevron.down" : "chevron.up")
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            toggleSectionCollapse(section)
+        }
+    }
+    
+    /// Toggle collapsed State of a Section
+    private func toggleSectionCollapse(_ section: String) {
+        withAnimation {
+            if collapsedSections.contains(section) {
+                collapsedSections.remove(section)
+            } else {
+                collapsedSections.insert(section)
+            }
         }
     }
 }

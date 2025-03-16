@@ -19,10 +19,13 @@ struct FavoritesView: View {
     var body: some View {
         
         NavigationStack {
-            if favoriteBooks.isEmpty {
-                emptyFavoritesView()
-            } else {
-                favoritesListView()
+            Group {
+                if favoriteBooks.isEmpty {
+                    emptyFavoritesView()
+                } else {
+                    favoritesListView()
+                        .searchable(text: $searchText, prompt: "Title Name")
+                }
             }
         }
         .onAppear(){
@@ -31,7 +34,6 @@ struct FavoritesView: View {
         .onDisappear(){
             saveFavorites()
         }
-        .searchable(text: $searchText, prompt: "Title Name")
         .autocorrectionDisabled(true)
         .sheet(isPresented: $isSelectingFavorites) {
             FavoritesSelectionView(favoriteBooks: $favoriteBooks, isSelectingFavorites: $isSelectingFavorites, isTabViewHidden: $isTabViewHidden, searchText: "")
@@ -97,12 +99,14 @@ struct FavoritesView: View {
                                     .onMove { source, destination in
                                         moveBook(in: section, from: source, to: destination)
                                     }
+                                    .transition(.opacity.combined(with: .move(edge: .top)))
                                 }
                             }
                         }
                     }
                 }
             }
+            .animation(.default, value: collapsedSections)
             .navigationTitle("Favorites")
             .toolbar {
                 EditButton() // enables reordering
@@ -173,10 +177,12 @@ struct FavoritesView: View {
     
     /// Toggle collapsed State of a Section
     private func toggleSectionCollapse(_ section: String) {
-        if collapsedSections.contains(section) {
-            collapsedSections.remove(section)
-        } else {
-            collapsedSections.insert(section)
+        withAnimation {
+            if collapsedSections.contains(section) {
+                collapsedSections.remove(section)
+            } else {
+                collapsedSections.insert(section)
+            }
         }
     }
     

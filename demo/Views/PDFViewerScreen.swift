@@ -119,7 +119,7 @@ struct PDFViewerScreen: View {
             HStack {
                 Spacer()
                 if isReadingModeOn {
-                    Slider(value: $readingModeOpacity, in: 0.05...0.4, step: 0.001)
+                    Slider(value: $readingModeOpacity, in: 0.05...0.3, step: 0.0001)
                         .frame(width: 250)
                         .padding()
                         .background(RoundedRectangle(cornerRadius: 30).fill(Color.white.opacity(0.8)))

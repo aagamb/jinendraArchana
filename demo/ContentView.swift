@@ -1,7 +1,6 @@
 // Goals
 // Implement Auto-scroll , which stops when the phone is kept horizontally
 // Implement Feedback, for beta testers
-// Night mode
 //  FAB button should work
 
 import SwiftUI
@@ -26,6 +25,11 @@ struct ContentView: View {
                     .tabItem {
                         Image(systemName: "star.fill")
                         Text("Favorites")
+                    }
+                FeedbackView()
+                    .tabItem {
+                        Image(systemName: "person.2.fill")
+                        Text("Feedback")
                     }
             }
                 

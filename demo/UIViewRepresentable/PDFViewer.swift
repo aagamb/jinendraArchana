@@ -29,7 +29,7 @@ struct PDFViewer: UIViewRepresentable {
         }
         
         pdfView.minScaleFactor = 1.0  // Minimum zoom level
-        pdfView.maxScaleFactor = 3.0  // Maximum zoom level
+        pdfView.maxScaleFactor = 2.5  // Maximum zoom level
         pdfView.scaleFactor = 1.1     // Default zoom level
         
         adjustZoom(pdfView: pdfView, orientation: orientation)

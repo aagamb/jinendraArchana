@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import JJFloatingActionButton
 
 struct PDFViewerScreen: View {
     let pdfName: String

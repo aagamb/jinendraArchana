@@ -117,6 +117,7 @@ func sectionList(for section: String, books: [Book], isTabViewHidden: Binding<Bo
                     .foregroundStyle(.gray)
                     .frame(width: 100, alignment: .leading)
                     .lineLimit(2)
+                
                 Text("\(book.pgNum)")
                     .frame(width:40, height: 10, alignment: .trailing)
                     .padding(.trailing, 0)

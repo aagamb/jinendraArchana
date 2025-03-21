@@ -53,6 +53,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		685DE4352D8CB26A00903DD2 /* SharedFunctions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedFunctions;
+			sourceTree = "<group>";
+		};
 		686AB4942D8780820063B65A /* UIViewControllerRepresentable */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +86,7 @@
 		68A91E802D6D4F2400155511 /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				685DE4352D8CB26A00903DD2 /* SharedFunctions */,
 				686AB4942D8780820063B65A /* UIViewControllerRepresentable */,
 				6890C06A2D76758800D7FDAD /* PDFs */,
 				68B735172D70F54D00D26A37 /* UIViewRepresentable */,

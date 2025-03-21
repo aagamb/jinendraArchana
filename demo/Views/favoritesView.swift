@@ -161,7 +161,7 @@ struct FavoritesView: View {
         }
     }
     
-    // To handle section movements
+    /// To handle section movements
     private func sectionHeader(for section: String) -> some View {
         HStack {
             Text(section.capitalized)

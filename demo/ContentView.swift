@@ -3,7 +3,6 @@
 // FAB animation
 // search view should split each title into words, and search on each word, and get minimum edit distance
 // for later - an arghawali section
-// run a cron-job to keep server active
 // have sub-dropdowns - like for chahdhala - six dhaals should show
 
 import SwiftUI

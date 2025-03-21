@@ -87,7 +87,7 @@ struct MultipleSelectionRowView: View {
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundColor(.blue)
                 } else {
-                    Image(systemName: "circle.dashed")
+                    Image(systemName: "circle")
                         .foregroundColor(.gray)
                 }
             }

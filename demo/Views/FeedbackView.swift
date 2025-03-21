@@ -10,56 +10,37 @@ import SwiftUI
 
 struct FeedbackView: View {
     @State private var nameText: String = ""
-    @State private var feedbackText: String = ""
+    @State private var brokenText: String = ""
+    @State private var requestedText: String = ""
+    @State private var isFeedbackSubmitted: Bool = false
+    @State private var isLoading: Bool = false
     
     var body: some View {
         NavigationView {
             VStack(alignment: .leading)
             {
+                
                 List {
                     
-                    Section(header: Text("Name")) {
-                        ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)){
-                            
-                            TextEditor(text: $nameText)
-                                .background(Color.clear)
-                                .scrollContentBackground(.hidden)
-                                .frame(minHeight: 40, maxHeight:60)
-                                .autocorrectionDisabled()
-                                .onSubmit() {
-                                    nameText = ""
-                                }
-                            
-                            //placeholder text
-                            if nameText.isEmpty {
-                                Text("Enter your name...")
-                                    .foregroundColor(.gray)
-                                    .padding(.horizontal, 2)
-                                    .padding(.vertical, 6)
-                            }
-                        }
+                    Section(header: Text("Jai Jinendra")) {
+                        Text("Welcome, Beta Testers. This feedback section is exclusively available to you and will be removed before the final production release. We greatly appreciate your insights and feedback.")
                     }
                     
-                    Section(header: Text("Any Changes/Modifications/Broken Features")) {
+                    Section(header: Text("Name")) {
+                        textEditorView(text: $nameText, placeholder: "Enter your name...")
+                    }
+
+                    Section(header: Text("Broken Features")) {
+                        textEditorView(text: $brokenText, placeholder: "Please list features you have found broken")
+                    }
+                    
+                    Section(header: Text("Modifications")) {
                         ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)){
-                            TextEditor(text: $feedbackText)
-                                .background(Color.clear)
-                                .scrollContentBackground(.hidden)
-                                .frame(minHeight: 40, maxHeight:450)
-                                .autocorrectionDisabled()
-                                .onSubmit() {
-                                    feedbackText = ""
-                                }
-                            
-                            //placeholder text
-                            if feedbackText.isEmpty {
-                                Text("Enter your feedback here...")
-                                    .foregroundColor(.gray)
-                                    .padding(.horizontal, 2)
-                                    .padding(.vertical, 6)
-                            }
+                            textEditorView(text: $requestedText, placeholder: "Please list any features which you would like to see in the future")
+
                         }
-                        if !feedbackText.isEmpty || !nameText.isEmpty {
+                        
+                        if !brokenText.isEmpty || !requestedText.isEmpty {
                             HStack{
                                 
                                 Button(action: {
@@ -72,21 +53,33 @@ struct FeedbackView: View {
                                 
                                 Spacer()
                                 
-                                Button(action: {
-                                    feedbackSubmitButtonAction()
-                                }) {
-                                    Text("Submit")
-                                        .foregroundStyle(
-                                            feedbackText.isEmpty || nameText.isEmpty ? .gray : .blue
-                                        )
+                                if isLoading {
+                                    ProgressView()
                                         .padding(.trailing)
+                                } else {
+                                    Button(action: {
+                                        feedbackSubmitButtonAction()
+                                        
+                                    }) {
+                                        Text("Submit")
+                                            .foregroundStyle(
+                                                brokenText.isEmpty || nameText.isEmpty ? .gray : .blue
+                                            )
+                                            .padding(.trailing)
+                                    }
+                                    .disabled(nameText.isEmpty || brokenText.isEmpty || requestedText.isEmpty)
                                 }
-                                .disabled(feedbackText.isEmpty || nameText.isEmpty)
+                                
                             }
                         }
+                        
+                        if isFeedbackSubmitted {
+                            Text("Feedback Submitted")
+                                .foregroundStyle(.green)
+                                
+                        }
+                        
                     }
-                    
-                    
                 }
                 
                 
@@ -99,14 +92,15 @@ struct FeedbackView: View {
     
     
     private func feedbackSubmitButtonAction() {
-        guard let url = URL(string: "https://feedback-api-e50o.onrender.com/feedback") else {
+        guard let url = URL(string: "https://feedback-api-e50o.onrender.com/feedback/") else {
             print("Invalid URL")
             return
         }
         
         let feedbackData: [String: Any] = [
             "name": nameText,
-            "message": feedbackText,
+            "broken": brokenText,
+            "requested": requestedText,
             "category": "general" // Modify if you have dynamic categories
         ]
         
@@ -118,7 +112,14 @@ struct FeedbackView: View {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = jsonData
             
+            isLoading = true //start loading
+            
             URLSession.shared.dataTask(with: request) { data, response, error in
+                
+                DispatchQueue.main.async {
+                    isLoading = false //stop loading
+                }
+                
                 if let error = error {
                     print("Error submitting feedback: \(error.localizedDescription)")
                     return
@@ -130,9 +131,12 @@ struct FeedbackView: View {
                 
                 // Clear only after request completes successfully
                 DispatchQueue.main.async {
+                    isFeedbackSubmitted = true
                     nameText = ""
-                    feedbackText = ""
+                    brokenText = ""
+                    requestedText = ""
                 }
+
             }.resume()
             
         } catch {
@@ -140,7 +144,23 @@ struct FeedbackView: View {
         }
     }
 
+    private func textEditorView(text: Binding<String>, placeholder: String) -> some View {
+            ZStack(alignment: .topLeading) {
+                TextEditor(text: text)
+                    .background(Color.clear)
+                    .scrollContentBackground(.hidden)
+                    .frame(minHeight: 40, maxHeight: 60)
+                    .autocorrectionDisabled()
 
+                if text.wrappedValue.isEmpty {
+                    Text(placeholder)
+                        .foregroundColor(.gray)
+                        .padding(.horizontal, 2)
+                        .padding(.vertical, 6)
+                        .allowsHitTesting(false)
+                }
+            }
+        }
 }
 
 /// to allow the keyboard to be dismissed when done is pressed

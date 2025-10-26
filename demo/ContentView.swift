@@ -16,26 +16,23 @@ struct ContentView: View {
             
     var body: some View {
         
-        NavigationView {
-            
-            TabView {
-                BookListView(isTabViewHidden: $isTabViewHidden)
-                    .tabItem {
-                        Image(systemName: "book.fill")
-                        Text("Path")
-                    }
+        TabView {
+            BookListView(isTabViewHidden: $isTabViewHidden)
+                .tabItem {
+                    Image(systemName: "book.fill")
+                    Text("Path")
+                }
 
-                FavoritesView(isTabViewHidden: $isTabViewHidden)
-                    .tabItem {
-                        Image(systemName: "star.fill")
-                        Text("Favorites")
-                    }
-                FeedbackView()
-                    .tabItem {
-                        Image(systemName: "person.2.fill")
-                        Text("Feedback")
-                    }
-            }
+            FavoritesView(isTabViewHidden: $isTabViewHidden)
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("Favorites")
+                }
+            FeedbackView()
+                .tabItem {
+                    Image(systemName: "person.2.fill")
+                    Text("Feedback")
+                }
         }
         
     }

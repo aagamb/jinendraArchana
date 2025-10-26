@@ -2,7 +2,7 @@ ToDos:
 
 1. (Done) FavoritesView:
     - The favorited books are not being loaded up when the favorites tab is opened, allowing for the same book to be selected multiple times.
-2. Search:
+2. (Done) Search:
     - When opening a book after searching for it, we get two back buttons, one called "Jinendra Archana", and the second called "Book List". There should only be one back button.
 3. FeedbackView:
     - Feedback API is broken, the database seems to be the problem. 

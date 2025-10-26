@@ -53,7 +53,6 @@ struct PDFViewerScreen: View {
             
             
             if !isNavBarHidden {
-                toolbarView()  // the top back button
                 if fabSelected {
                     floatingActionButtons()
                 } else {
@@ -61,34 +60,13 @@ struct PDFViewerScreen: View {
                 }
             }
         }
-        .toolbar(.hidden , for: .tabBar, .navigationBar)
+        .toolbar(.hidden, for: .tabBar)
+        .navigationBarHidden(isNavBarHidden)
         .animation(.easeInOut(duration: 0.5), value: isNavBarHidden)
         
         
     }
     
-    private func toolbarView() -> some View {
-        VStack(spacing: 0) {
-            HStack {
-                Button(action: {
-                    dismiss()
-                }) {
-                    Image(systemName: "chevron.left")
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                    Text("Back")
-                        .foregroundColor(.blue)
-                }
-                .padding(.top, 5)
-                .padding(.leading,20)
-                .padding(.bottom, 20)
-                Spacer()
-                
-            }
-            .background(Color.white)
-        }
-        .frame(maxWidth: .infinity)
-        .background(Color.clear)
-    }
     
     private func floatingActionButton() -> some View {
         VStack {

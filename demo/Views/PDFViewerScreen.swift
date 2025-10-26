@@ -35,7 +35,6 @@ struct PDFViewerScreen: View {
                     .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
                         orientation = UIDevice.current.orientation
                     }
-                    
                     .gesture(DragGesture()
                         .onEnded { value in
                             if value.translation.width>100 {

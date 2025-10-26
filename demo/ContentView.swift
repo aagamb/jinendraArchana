@@ -28,7 +28,7 @@ struct ContentView: View {
                 FavoritesView(isTabViewHidden: $isTabViewHidden)
                     .tabItem {
                         Image(systemName: "star.fill")
-                        Text("Favorite")
+                        Text("Favorites")
                     }
                 FeedbackView()
                     .tabItem {

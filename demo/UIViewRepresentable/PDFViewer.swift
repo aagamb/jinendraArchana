@@ -30,7 +30,7 @@ struct PDFViewer: UIViewRepresentable {
         
         pdfView.minScaleFactor = 1.0  // Minimum zoom level
         pdfView.maxScaleFactor = 2.5  // Maximum zoom level
-        pdfView.scaleFactor = 1.1     // Default zoom level
+        pdfView.scaleFactor = 1.0     // Default zoom level
         
         adjustZoom(pdfView: pdfView, orientation: orientation)
         
@@ -44,7 +44,7 @@ struct PDFViewer: UIViewRepresentable {
     }
     
     private func adjustZoom(pdfView: PDFView, orientation: UIDeviceOrientation){
-        let portraitZoom: CGFloat = 1.1
+        let portraitZoom: CGFloat = 1.0
         let landscapeZoom: CGFloat = 2.3
         
         if orientation.isLandscape {

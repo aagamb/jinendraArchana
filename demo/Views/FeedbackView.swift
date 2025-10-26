@@ -27,16 +27,16 @@ struct FeedbackView: View {
                     }
                     
                     Section(header: Text("Name")) {
-                        textEditorView(text: $nameText, placeholder: "Enter your name...")
+                        textEditorView(text: $nameText, placeholder: "Enter your name")
                     }
 
                     Section(header: Text("Broken Features")) {
-                        textEditorView(text: $brokenText, placeholder: "Please list features you have found broken")
+                        textEditorView(text: $brokenText, placeholder: "Report Broken Features")
                     }
                     
                     Section(header: Text("Modifications")) {
                         ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)){
-                            textEditorView(text: $requestedText, placeholder: "Please list any features which you would like to see in the future")
+                            textEditorView(text: $requestedText, placeholder: "Suggest Future Features")
 
                         }
                         
@@ -86,6 +86,9 @@ struct FeedbackView: View {
             }
             .navigationTitle("Feedback")
             .navigationBarItems(trailing: Button("Done") { hideKeyboard() })
+        }
+        .onDisappear() {
+            isFeedbackSubmitted = false
         }
         
     }

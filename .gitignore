@@ -1,0 +1,15 @@
+# PDF folders
+demo/PDFs/
+demo/temp/
+demo/indi/
+
+# Xcode user data
+*.xcuserstate
+*.xcuserdatad/
+
+# Build artifacts
+build/
+DerivedData/
+
+# macOS
+.DS_Store

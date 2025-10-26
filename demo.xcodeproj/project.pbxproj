@@ -21,6 +21,7 @@
 		68B735292D70FA9800D26A37 /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B735282D70FA9800D26A37 /* BookListView.swift */; };
 		68B7352B2D70FB2900D26A37 /* PDFViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7352A2D70FB2900D26A37 /* PDFViewer.swift */; };
 		68B9DB892D6FADA20013BE8A /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B9DB882D6FADA20013BE8A /* BookData.swift */; };
+		D80C62622EADD67900631C63 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = D80C62612EADD67900631C63 /* Inject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,26 +48,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80C62622EADD67900631C63 /* Inject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		685DE4352D8CB26A00903DD2 /* SharedFunctions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedFunctions;
-			sourceTree = "<group>";
-		};
-		686AB4942D8780820063B65A /* UIViewControllerRepresentable */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIViewControllerRepresentable;
-			sourceTree = "<group>";
-		};
 		68A91E752D6D4F2400155511 = {
 			isa = PBXGroup;
 			children = (
@@ -86,8 +74,6 @@
 		68A91E802D6D4F2400155511 /* demo */ = {
 			isa = PBXGroup;
 			children = (
-				685DE4352D8CB26A00903DD2 /* SharedFunctions */,
-				686AB4942D8780820063B65A /* UIViewControllerRepresentable */,
 				6890C06A2D76758800D7FDAD /* PDFs */,
 				68B735172D70F54D00D26A37 /* UIViewRepresentable */,
 				68B735162D70F4E100D26A37 /* Models */,
@@ -156,6 +142,7 @@
 			);
 			name = demo;
 			packageProductDependencies = (
+				D80C62612EADD67900631C63 /* Inject */,
 			);
 			productName = demo;
 			productReference = 68A91E7E2D6D4F2400155511 /* demo.app */;
@@ -186,6 +173,7 @@
 			);
 			mainGroup = 68A91E752D6D4F2400155511;
 			packageReferences = (
+				D80C62602EADD67900631C63 /* XCRemoteSwiftPackageReference "Inject" */,
 			);
 			productRefGroup = 68A91E7F2D6D4F2400155511 /* Products */;
 			projectDirPath = "";
@@ -287,6 +275,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "\"-Xlinker -interposable\"";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -449,6 +438,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D80C62602EADD67900631C63 /* XCRemoteSwiftPackageReference "Inject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D80C62612EADD67900631C63 /* Inject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D80C62602EADD67900631C63 /* XCRemoteSwiftPackageReference "Inject" */;
+			productName = Inject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 68A91E762D6D4F2400155511 /* Project object */;
 }

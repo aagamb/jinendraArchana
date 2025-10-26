@@ -21,6 +21,21 @@ struct Book: Hashable, Identifiable, Codable {
         self.pgNum = pgNum
         self.id = id
     }
+    
+    // Custom hash and equality to compare books by content, not UUID
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(hindiName)
+        hasher.combine(author)
+        hasher.combine(pgNum)
+    }
+    
+    static func == (lhs: Book, rhs: Book) -> Bool {
+        return lhs.name == rhs.name &&
+               lhs.hindiName == rhs.hindiName &&
+               lhs.author == rhs.author &&
+               lhs.pgNum == rhs.pgNum
+    }
 }
 
 

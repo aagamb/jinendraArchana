@@ -4,5 +4,10 @@ ToDos:
     - The favorited books are not being loaded up when the favorites tab is opened, allowing for the same book to be selected multiple times.
 2. (Done) Search:
     - When opening a book after searching for it, we get two back buttons, one called "Jinendra Archana", and the second called "Book List". There should only be one back button.
-3. FeedbackView:
+3. (Not Necessary) FeedbackView:
     - Feedback API is broken, the database seems to be the problem. 
+4. (Done) Some Books not opening up
+5. (Skipped) Search View Not visible on startup
+6. Get Developer Account. 
+7. (Done) Update MacOS
+8. (Skipped) When the FAB + icon disappears, there is no animation. It is abrupt.

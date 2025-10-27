@@ -28,11 +28,11 @@ struct ContentView: View {
                     Image(systemName: "star.fill")
                     Text("Favorites")
                 }
-            FeedbackView()
-                .tabItem {
-                    Image(systemName: "person.2.fill")
-                    Text("Feedback")
-                }
+            // FeedbackView()
+            //     .tabItem {
+            //         Image(systemName: "person.2.fill")
+            //         Text("Feedback")
+            //     }
         }
         
     }

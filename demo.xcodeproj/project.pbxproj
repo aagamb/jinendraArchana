@@ -21,13 +21,12 @@
 		68B735292D70FA9800D26A37 /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B735282D70FA9800D26A37 /* BookListView.swift */; };
 		68B7352B2D70FB2900D26A37 /* PDFViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7352A2D70FB2900D26A37 /* PDFViewer.swift */; };
 		68B9DB892D6FADA20013BE8A /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B9DB882D6FADA20013BE8A /* BookData.swift */; };
-		D80C62622EADD67900631C63 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = D80C62612EADD67900631C63 /* Inject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		685DE4312D8B577E00903DD2 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		685DE4332D8BC7B200903DD2 /* PDF Splitter.ipynb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PDF Splitter.ipynb"; sourceTree = "<group>"; };
-		6890C06A2D76758800D7FDAD /* PDFs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PDFs; path = ../../../../../Downloads/PDFs; sourceTree = "<group>"; };
+		6890C06A2D76758800D7FDAD /* PDFs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PDFs; path = PDFs; sourceTree = "<group>"; };
 		68A91E7E2D6D4F2400155511 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A91E812D6D4F2400155511 /* demoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoApp.swift; sourceTree = "<group>"; };
 		68A91E832D6D4F2400155511 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,7 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D80C62622EADD67900631C63 /* Inject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +140,6 @@
 			);
 			name = demo;
 			packageProductDependencies = (
-				D80C62612EADD67900631C63 /* Inject */,
 			);
 			productName = demo;
 			productReference = 68A91E7E2D6D4F2400155511 /* demo.app */;
@@ -173,7 +170,6 @@
 			);
 			mainGroup = 68A91E752D6D4F2400155511;
 			packageReferences = (
-				D80C62602EADD67900631C63 /* XCRemoteSwiftPackageReference "Inject" */,
 			);
 			productRefGroup = 68A91E7F2D6D4F2400155511 /* Products */;
 			projectDirPath = "";
@@ -339,6 +335,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = demo/demo.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
@@ -347,7 +344,7 @@
 				DEVELOPMENT_TEAM = 9ZUGLMD7FX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Jinendra Archana";
+				INFOPLIST_KEY_CFBundleDisplayName = "जिनेन्द्र अर्चना";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -380,6 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = demo/demo.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
@@ -388,7 +386,7 @@
 				DEVELOPMENT_TEAM = 9ZUGLMD7FX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Jinendra Archana";
+				INFOPLIST_KEY_CFBundleDisplayName = "जिनेन्द्र अर्चना";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -438,25 +436,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		D80C62602EADD67900631C63 /* XCRemoteSwiftPackageReference "Inject" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		D80C62612EADD67900631C63 /* Inject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D80C62602EADD67900631C63 /* XCRemoteSwiftPackageReference "Inject" */;
-			productName = Inject;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 68A91E762D6D4F2400155511 /* Project object */;
 }

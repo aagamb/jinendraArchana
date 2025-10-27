@@ -24,7 +24,8 @@
 
 /* Begin PBXFileReference section */
 		685DE4312D8B577E00903DD2 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
-		6890C06A2D76758800D7FDAD /* PDFs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PDFs; sourceTree = "<group>"; };
+		685DE4332D8BC7B200903DD2 /* PDF Splitter.ipynb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PDF Splitter.ipynb"; sourceTree = "<group>"; };
+		6890C06A2D76758800D7FDAD /* PDFs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PDFs; path = PDFs; sourceTree = "<group>"; };
 		68A91E7E2D6D4F2400155511 /* Jinendra Archana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jinendra Archana.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A91E812D6D4F2400155511 /* JinendraArchanaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JinendraArchanaApp.swift; sourceTree = "<group>"; };
 		68A91E832D6D4F2400155511 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };

@@ -129,7 +129,7 @@ let sections: [String: [Book]] = [
             Book(name: "Visarjan (Sanskrit)", hindiName: "विसर्जन (संस्कृत)", author: "-", pgNum: 262),
             Book(name: "Shanti Path (Bhasha)", hindiName: "शांति पाठ (भाषा)", author: "-", pgNum: 263),
             Book(name: "Visarjan (Bhasha)", hindiName: "विसर्जन (भाषा)", author: "-", pgNum: 264),
-            Book(name: "Shanti Path (Laghu)", hindiName: "शांति पाठ (लघु)", author: "-", pgNum: 265),
+            Book(name: "Shanti Path (Laghu)", hindiName: "शांति पाठ (लघु)", author: "डॉ. हुकमचंद भारिल्ल", pgNum: 265),
             Book(name: "Shanti Path", hindiName: "शांति पाठ", author: "डॉ. हुकमचंद भारिल्ल", pgNum: 266)
     ],
     "Adhyatmik Path": [

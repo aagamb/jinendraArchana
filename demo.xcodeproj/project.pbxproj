@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		685DE4322D8B577E00903DD2 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DE4312D8B577E00903DD2 /* FeedbackView.swift */; };
 		6890C06B2D76758800D7FDAD /* PDFs in Resources */ = {isa = PBXBuildFile; fileRef = 6890C06A2D76758800D7FDAD /* PDFs */; };
-		68A91E822D6D4F2400155511 /* demoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A91E812D6D4F2400155511 /* demoApp.swift */; };
+		68A91E822D6D4F2400155511 /* JinendraArchanaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A91E812D6D4F2400155511 /* JinendraArchanaApp.swift */; };
 		68A91E842D6D4F2400155511 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A91E832D6D4F2400155511 /* ContentView.swift */; };
 		68A91E862D6D4F2500155511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A91E852D6D4F2500155511 /* Assets.xcassets */; };
 		68A91E8A2D6D4F2500155511 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A91E892D6D4F2500155511 /* Preview Assets.xcassets */; };
@@ -25,11 +25,11 @@
 /* Begin PBXFileReference section */
 		685DE4312D8B577E00903DD2 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		6890C06A2D76758800D7FDAD /* PDFs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PDFs; sourceTree = "<group>"; };
-		68A91E7E2D6D4F2400155511 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		68A91E812D6D4F2400155511 /* demoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoApp.swift; sourceTree = "<group>"; };
+		68A91E7E2D6D4F2400155511 /* Jinendra Archana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jinendra Archana.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68A91E812D6D4F2400155511 /* JinendraArchanaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JinendraArchanaApp.swift; sourceTree = "<group>"; };
 		68A91E832D6D4F2400155511 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		68A91E852D6D4F2500155511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		68A91E872D6D4F2500155511 /* demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = demo.entitlements; sourceTree = "<group>"; };
+		68A91E872D6D4F2500155511 /* Jinendra Archana.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Jinendra Archana.entitlements"; sourceTree = "<group>"; };
 		68A91E892D6D4F2500155511 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		68B08C5D2D765AC300DF5E6A /* Jinendra Archana.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Jinendra Archana.pdf"; sourceTree = "<group>"; };
 		68B735222D70F90500D26A37 /* favoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoritesView.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		68A91E752D6D4F2400155511 = {
 			isa = PBXGroup;
 			children = (
-				68A91E802D6D4F2400155511 /* demo */,
+				68A91E802D6D4F2400155511 /* Jinendra Archana */,
 				68A91E7F2D6D4F2400155511 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,12 +62,12 @@
 		68A91E7F2D6D4F2400155511 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				68A91E7E2D6D4F2400155511 /* demo.app */,
+				68A91E7E2D6D4F2400155511 /* Jinendra Archana.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		68A91E802D6D4F2400155511 /* demo */ = {
+		68A91E802D6D4F2400155511 /* Jinendra Archana */ = {
 			isa = PBXGroup;
 			children = (
 				6890C06A2D76758800D7FDAD /* PDFs */,
@@ -75,13 +75,13 @@
 				68B735162D70F4E100D26A37 /* Models */,
 				68B735112D70F3EC00D26A37 /* Views */,
 				68B08C5D2D765AC300DF5E6A /* Jinendra Archana.pdf */,
-				68A91E812D6D4F2400155511 /* demoApp.swift */,
+				68A91E812D6D4F2400155511 /* JinendraArchanaApp.swift */,
 				68A91E832D6D4F2400155511 /* ContentView.swift */,
 				68A91E852D6D4F2500155511 /* Assets.xcassets */,
-				68A91E872D6D4F2500155511 /* demo.entitlements */,
+				68A91E872D6D4F2500155511 /* Jinendra Archana.entitlements */,
 				68A91E882D6D4F2500155511 /* Preview Content */,
 			);
-			path = demo;
+			path = "Jinendra Archana";
 			sourceTree = "<group>";
 		};
 		68A91E882D6D4F2500155511 /* Preview Content */ = {
@@ -123,9 +123,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		68A91E7D2D6D4F2400155511 /* demo */ = {
+		68A91E7D2D6D4F2400155511 /* Jinendra Archana */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 68A91E8D2D6D4F2500155511 /* Build configuration list for PBXNativeTarget "demo" */;
+			buildConfigurationList = 68A91E8D2D6D4F2500155511 /* Build configuration list for PBXNativeTarget "Jinendra Archana" */;
 			buildPhases = (
 				68A91E7A2D6D4F2400155511 /* Sources */,
 				68A91E7B2D6D4F2400155511 /* Frameworks */,
@@ -135,11 +135,11 @@
 			);
 			dependencies = (
 			);
-			name = demo;
+			name = "Jinendra Archana";
 			packageProductDependencies = (
 			);
-			productName = demo;
-			productReference = 68A91E7E2D6D4F2400155511 /* demo.app */;
+			productName = "Jinendra Archana";
+			productReference = 68A91E7E2D6D4F2400155511 /* Jinendra Archana.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -157,7 +157,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 68A91E792D6D4F2400155511 /* Build configuration list for PBXProject "demo" */;
+			buildConfigurationList = 68A91E792D6D4F2400155511 /* Build configuration list for PBXProject "Jinendra Archana" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -172,7 +172,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				68A91E7D2D6D4F2400155511 /* demo */,
+				68A91E7D2D6D4F2400155511 /* Jinendra Archana */,
 			);
 		};
 /* End PBXProject section */
@@ -201,7 +201,7 @@
 				685DE4322D8B577E00903DD2 /* FeedbackView.swift in Sources */,
 				68B735232D70F90500D26A37 /* favoritesView.swift in Sources */,
 				68A91E842D6D4F2400155511 /* ContentView.swift in Sources */,
-				68A91E822D6D4F2400155511 /* demoApp.swift in Sources */,
+				68A91E822D6D4F2400155511 /* JinendraArchanaApp.swift in Sources */,
 				68B735292D70FA9800D26A37 /* BookListView.swift in Sources */,
 				68B7352B2D70FB2900D26A37 /* PDFViewer.swift in Sources */,
 				68B9DB892D6FADA20013BE8A /* BookData.swift in Sources */,
@@ -332,11 +332,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = demo/demo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Jinendra Archana/Jinendra Archana.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"demo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Jinendra Archana/Preview Content\"";
 				DEVELOPMENT_TEAM = 9ZUGLMD7FX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -374,11 +374,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = demo/demo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Jinendra Archana/Jinendra Archana.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"demo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Jinendra Archana/Preview Content\"";
 				DEVELOPMENT_TEAM = 9ZUGLMD7FX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -413,7 +413,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		68A91E792D6D4F2400155511 /* Build configuration list for PBXProject "demo" */ = {
+		68A91E792D6D4F2400155511 /* Build configuration list for PBXProject "Jinendra Archana" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68A91E8B2D6D4F2500155511 /* Debug */,
@@ -422,7 +422,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		68A91E8D2D6D4F2500155511 /* Build configuration list for PBXNativeTarget "demo" */ = {
+		68A91E8D2D6D4F2500155511 /* Build configuration list for PBXNativeTarget "Jinendra Archana" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68A91E8E2D6D4F2500155511 /* Debug */,

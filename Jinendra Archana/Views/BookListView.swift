@@ -16,14 +16,21 @@ func filteredBooks(from books: [Book], searchText: String) -> [Book] {
     }
     else {
         var filteredBooks : [Book] = []
+        let searchTextLower = searchText.lowercased()
+        
         for book in books {
-            let bookSubSeq = book.name.prefix(searchText.count)
-            if levenshteinDistance(bookSubSeq.lowercased(), searchText.lowercased()) <= 3 {
+            let bookNameLower = book.name.lowercased()
+            
+            // Check if search text appears anywhere in the book name
+            if bookNameLower.contains(searchTextLower) {
+                filteredBooks.append(book)
+            }
+            // Also check with Levenshtein distance for fuzzy matching
+            else if levenshteinDistance(bookNameLower, searchTextLower) <= 3 {
                 filteredBooks.append(book)
             }
         }
         return filteredBooks
-            
     }
 }
 

@@ -20,6 +20,8 @@
 		68B735292D70FA9800D26A37 /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B735282D70FA9800D26A37 /* BookListView.swift */; };
 		68B7352B2D70FB2900D26A37 /* PDFViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7352A2D70FB2900D26A37 /* PDFViewer.swift */; };
 		68B9DB892D6FADA20013BE8A /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B9DB882D6FADA20013BE8A /* BookData.swift */; };
+		D8B339532EBA55E500C80D44 /* SettingsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B339512EBA55E500C80D44 /* SettingsPanel.swift */; };
+		D8B339542EBA55E500C80D44 /* StreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B339522EBA55E500C80D44 /* StreakView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		68B735282D70FA9800D26A37 /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
 		68B7352A2D70FB2900D26A37 /* PDFViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewer.swift; sourceTree = "<group>"; };
 		68B9DB882D6FADA20013BE8A /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
+		D8B339512EBA55E500C80D44 /* SettingsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPanel.swift; sourceTree = "<group>"; };
+		D8B339522EBA55E500C80D44 /* StreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 		68B735112D70F3EC00D26A37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D8B339512EBA55E500C80D44 /* SettingsPanel.swift */,
+				D8B339522EBA55E500C80D44 /* StreakView.swift */,
 				68B735262D70FA4800D26A37 /* PDFViewerScreen.swift */,
 				68B735222D70F90500D26A37 /* favoritesView.swift */,
 				68B735242D70F95C00D26A37 /* FavoritesSelectionView.swift */,
@@ -197,6 +203,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				68B735272D70FA4800D26A37 /* PDFViewerScreen.swift in Sources */,
+				D8B339532EBA55E500C80D44 /* SettingsPanel.swift in Sources */,
+				D8B339542EBA55E500C80D44 /* StreakView.swift in Sources */,
 				68B735252D70F95C00D26A37 /* FavoritesSelectionView.swift in Sources */,
 				685DE4322D8B577E00903DD2 /* FeedbackView.swift in Sources */,
 				68B735232D70F90500D26A37 /* favoritesView.swift in Sources */,
@@ -348,7 +356,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "जिनेन्द्र अर्चना";
+				INFOPLIST_KEY_CFBundleDisplayName = "Jinendra Archana";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -392,7 +400,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "जिनेन्द्र अर्चना";
+				INFOPLIST_KEY_CFBundleDisplayName = "Jinendra Archana";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;

@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var isTabViewHidden = false
     @State private var isSettingsOpen = false
     @State private var selectedTab: Int = 0
+    @ObservedObject private var tracker = AppOpenTracker.shared
             
     var body: some View {
         ZStack {
@@ -62,6 +63,9 @@ struct ContentView: View {
                     .transition(.move(edge: .leading))
                     .zIndex(1)
             }
+        }
+        .onAppear {
+            tracker.markOpenedToday()
         }
         .overlay(alignment: .topLeading) {
             if selectedTab == 0 && !isSettingsOpen {

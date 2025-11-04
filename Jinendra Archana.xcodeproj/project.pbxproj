@@ -22,6 +22,7 @@
 		68B9DB892D6FADA20013BE8A /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B9DB882D6FADA20013BE8A /* BookData.swift */; };
 		D8B339532EBA55E500C80D44 /* SettingsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B339512EBA55E500C80D44 /* SettingsPanel.swift */; };
 		D8B339542EBA55E500C80D44 /* StreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B339522EBA55E500C80D44 /* StreakView.swift */; };
+		D8B339562EBA589E00C80D44 /* AppOpenTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B339552EBA589E00C80D44 /* AppOpenTracker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		68B9DB882D6FADA20013BE8A /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
 		D8B339512EBA55E500C80D44 /* SettingsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPanel.swift; sourceTree = "<group>"; };
 		D8B339522EBA55E500C80D44 /* StreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakView.swift; sourceTree = "<group>"; };
+		D8B339552EBA589E00C80D44 /* AppOpenTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenTracker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		68B735162D70F4E100D26A37 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D8B339552EBA589E00C80D44 /* AppOpenTracker.swift */,
 				68B9DB882D6FADA20013BE8A /* BookData.swift */,
 			);
 			path = Models;
@@ -208,6 +211,7 @@
 				68B735252D70F95C00D26A37 /* FavoritesSelectionView.swift in Sources */,
 				685DE4322D8B577E00903DD2 /* FeedbackView.swift in Sources */,
 				68B735232D70F90500D26A37 /* favoritesView.swift in Sources */,
+				D8B339562EBA589E00C80D44 /* AppOpenTracker.swift in Sources */,
 				68A91E842D6D4F2400155511 /* ContentView.swift in Sources */,
 				68A91E822D6D4F2400155511 /* JinendraArchanaApp.swift in Sources */,
 				68B735292D70FA9800D26A37 /* BookListView.swift in Sources */,

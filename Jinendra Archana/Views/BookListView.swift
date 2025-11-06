@@ -56,6 +56,7 @@ func levenshteinDistance(_ s1: String, _ s2: String) -> Int {
 struct BookListView: View {
     
     @Binding var isTabViewHidden: Bool
+    @Binding var isSearchActive: Bool
     @State private var searchText: String = ""
     private let keyOrder = ["Stavan", "Poojan", "Adhyatmik Path", "Bhakti"]
     @State private var collapsedSections: Set<String> = []
@@ -81,7 +82,7 @@ struct BookListView: View {
             }
             .animation(.default, value: collapsedSections)
             .navigationTitle("Jinendra Archana")
-            .searchable(text: $searchText, prompt: "Title Name")
+            .searchable(text: $searchText, isPresented: $isSearchActive, prompt: "Title Name")
             .autocorrectionDisabled(true)
         }
     }

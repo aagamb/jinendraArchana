@@ -15,13 +15,14 @@ struct ContentView: View {
     @AppStorage("useStreak") private var useStreak = false
     @State private var isTabViewHidden = false
     @State private var isSettingsOpen = false
+    @State private var isSearchActive = false
     @State private var selectedTab: Int = 0
     @ObservedObject private var tracker = AppOpenTracker.shared
             
     var body: some View {
         ZStack {
             TabView(selection: $selectedTab) {
-                BookListView(isTabViewHidden: $isTabViewHidden)
+                BookListView(isTabViewHidden: $isTabViewHidden, isSearchActive: $isSearchActive)
                     .tabItem {
                         Image(systemName: "book.fill")
                         Text("Path")
@@ -68,7 +69,7 @@ struct ContentView: View {
             tracker.markOpenedToday()
         }
         .overlay(alignment: .topLeading) {
-            if selectedTab == 0 && !isSettingsOpen {
+            if selectedTab == 0 && !isSettingsOpen && !isSearchActive && !isTabViewHidden {
                 Button {
                     withAnimation(.spring(response: 0.35, dampingFraction: 0.9)) {
                         isSettingsOpen = true

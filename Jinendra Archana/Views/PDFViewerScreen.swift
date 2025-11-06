@@ -26,7 +26,7 @@ struct PDFViewerScreen: View {
     var body: some View {
         ZStack(alignment: .top) {
             GeometryReader { geometry in
-                PDFViewer(pdfName: pdfName, isNavBarHidden: $isNavBarHidden, orientation: $orientation)
+                PDFViewerWithState(pdfName: pdfName, isNavBarHidden: $isNavBarHidden, orientation: $orientation)
                     .ignoresSafeArea(.all)
                     .onTapGesture {
                         isNavBarHidden.toggle()

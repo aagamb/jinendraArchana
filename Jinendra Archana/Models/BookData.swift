@@ -36,6 +36,22 @@ struct Book: Hashable, Identifiable, Codable {
                lhs.author == rhs.author &&
                lhs.pgNum == rhs.pgNum
     }
+    
+    // MARK: - S3 Helper Methods
+    
+    /// Generates the S3 key path for this book's PDF
+    /// Format: "PDFs/{Book.name}.pdf" or "PDFsDev/{Book.name}.pdf" in dev mode
+    /// This key will be used to generate pre-signed URLs in S3Service
+    func s3Key() -> String {
+        let folderName = S3Service.shared.s3FolderName
+        return "\(folderName)/\(name).pdf"
+    }
+    
+    /// Generates the local filename for this book's PDF
+    /// Format: "{Book.name}.pdf"
+    func localFileName() -> String {
+        return "\(name).pdf"
+    }
 }
 
 
@@ -63,7 +79,7 @@ let sections: [String: [Book]] = [
         Book(name: "Darshan Path", hindiName: "दर्शन पाठ", author: "-", pgNum: 51),
         Book(name: "Dev Stuti (Prabhu Patit Pavan)", hindiName: "देवस्तुति (प्रभु पतितपावन...)", author: "श्री बुधजन", pgNum: 52),
         Book(name: "Darshan Stuti (Ati Punya Uday Mam Aaya)", hindiName: "दर्शन स्तुति (अतिपुण्य उदय...)", author: "श्री अमरचंदजी", pgNum: 53),
-        Book(name: "Darshan Stuti (Sakal Gyey Gyayak Tadapi)", hindiName: "दर्शन स्तुति (सकलराश...)", author: "पं. दौलतरामजी", pgNum: 54),
+        Book(name: "Darshan Stuti (Sakal Gyey Gyayak Tadapi)", hindiName: "दर्शन स्तुति (सकल ज्ञेय ज्ञायक तदपि...)", author: "पं. दौलतरामजी", pgNum: 54),
         Book(name: "Darshan Path 2", hindiName: "दर्शन पाठ (दर्शन श्री देवाधिदेव का...)", author: "श्री युगलजी", pgNum: 56),
         Book(name: "Aaradhana Path", hindiName: "आराधना पाठ (मैं देव नित...)", author: "पं. द्यानतरायजी", pgNum: 57),
         Book(name: "Dev Stuti (Veetrag Sarvagya Hitankar)", hindiName: "देव स्तुति (वीतराग सर्वज्ञ हितकर...)", author: "-", pgNum: 58)
@@ -214,4 +230,25 @@ let sections: [String: [Book]] = [
         Book(name:"Holi Khele Muniraj Shikhar Van Mein", hindiName:"होली खेलें मुनिराज शिखर वन में...", author:"पं. भूधरदासजी", pgNum:360)
     ]
 ]
+
+// MARK: - Helper Functions
+
+/// Returns all books from all sections as a flat array
+/// 
+/// This is used for the "all or nothing" download approach:
+/// - Either all PDFs are downloaded together, or none are downloaded
+/// - No partial downloads of individual files
+/// - Useful for bulk download operations and tracking total count
+func getAllBooks() -> [Book] {
+    return sections.values.flatMap { $0 }
+}
+
+/// Returns the total count of all books across all sections
+/// 
+/// Used for tracking download progress in "all or nothing" approach:
+/// - Shows progress as "X of Y PDFs downloaded"
+/// - When X == Y, all PDFs are available offline
+func getTotalBookCount() -> Int {
+    return getAllBooks().count
+}
     

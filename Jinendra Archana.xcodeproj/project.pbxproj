@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		685DE4322D8B577E00903DD2 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DE4312D8B577E00903DD2 /* FeedbackView.swift */; };
-		6890C06B2D76758800D7FDAD /* PDFs in Resources */ = {isa = PBXBuildFile; fileRef = 6890C06A2D76758800D7FDAD /* PDFs */; };
 		68A91E822D6D4F2400155511 /* JinendraArchanaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A91E812D6D4F2400155511 /* JinendraArchanaApp.swift */; };
 		68A91E842D6D4F2400155511 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A91E832D6D4F2400155511 /* ContentView.swift */; };
 		68A91E862D6D4F2500155511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A91E852D6D4F2500155511 /* Assets.xcassets */; };
@@ -20,6 +19,11 @@
 		68B735292D70FA9800D26A37 /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B735282D70FA9800D26A37 /* BookListView.swift */; };
 		68B7352B2D70FB2900D26A37 /* PDFViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7352A2D70FB2900D26A37 /* PDFViewer.swift */; };
 		68B9DB892D6FADA20013BE8A /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B9DB882D6FADA20013BE8A /* BookData.swift */; };
+		D817C6AF2EBC2B0F000A3E86 /* PDFStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D817C6AD2EBC2B0F000A3E86 /* PDFStorageManager.swift */; };
+		D817C6B12EBC2E07000A3E86 /* S3Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D817C6B02EBC2E07000A3E86 /* S3Service.swift */; };
+		D817C6B32EBC2EAD000A3E86 /* PDFDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D817C6B22EBC2EAD000A3E86 /* PDFDownloadManager.swift */; };
+		D817C6B52EBC3B6B000A3E86 /* PDFPackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D817C6B42EBC3B6B000A3E86 /* PDFPackManager.swift */; };
+		D817C6BB2EBC62A1000A3E86 /* DownloadSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D817C6BA2EBC62A1000A3E86 /* DownloadSettingsView.swift */; };
 		D8B339532EBA55E500C80D44 /* SettingsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B339512EBA55E500C80D44 /* SettingsPanel.swift */; };
 		D8B339542EBA55E500C80D44 /* StreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B339522EBA55E500C80D44 /* StreakView.swift */; };
 		D8B339562EBA589E00C80D44 /* AppOpenTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B339552EBA589E00C80D44 /* AppOpenTracker.swift */; };
@@ -27,7 +31,6 @@
 
 /* Begin PBXFileReference section */
 		685DE4312D8B577E00903DD2 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
-		6890C06A2D76758800D7FDAD /* PDFs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PDFs; sourceTree = "<group>"; };
 		68A91E7E2D6D4F2400155511 /* Jinendra Archana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jinendra Archana.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A91E812D6D4F2400155511 /* JinendraArchanaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JinendraArchanaApp.swift; sourceTree = "<group>"; };
 		68A91E832D6D4F2400155511 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +44,11 @@
 		68B735282D70FA9800D26A37 /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
 		68B7352A2D70FB2900D26A37 /* PDFViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewer.swift; sourceTree = "<group>"; };
 		68B9DB882D6FADA20013BE8A /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
+		D817C6AD2EBC2B0F000A3E86 /* PDFStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFStorageManager.swift; sourceTree = "<group>"; };
+		D817C6B02EBC2E07000A3E86 /* S3Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S3Service.swift; sourceTree = "<group>"; };
+		D817C6B22EBC2EAD000A3E86 /* PDFDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDownloadManager.swift; sourceTree = "<group>"; };
+		D817C6B42EBC3B6B000A3E86 /* PDFPackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPackManager.swift; sourceTree = "<group>"; };
+		D817C6BA2EBC62A1000A3E86 /* DownloadSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadSettingsView.swift; sourceTree = "<group>"; };
 		D8B339512EBA55E500C80D44 /* SettingsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPanel.swift; sourceTree = "<group>"; };
 		D8B339522EBA55E500C80D44 /* StreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakView.swift; sourceTree = "<group>"; };
 		D8B339552EBA589E00C80D44 /* AppOpenTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenTracker.swift; sourceTree = "<group>"; };
@@ -76,7 +84,7 @@
 		68A91E802D6D4F2400155511 /* Jinendra Archana */ = {
 			isa = PBXGroup;
 			children = (
-				6890C06A2D76758800D7FDAD /* PDFs */,
+				D817C6AE2EBC2B0F000A3E86 /* Services */,
 				68B735172D70F54D00D26A37 /* UIViewRepresentable */,
 				68B735162D70F4E100D26A37 /* Models */,
 				68B735112D70F3EC00D26A37 /* Views */,
@@ -101,6 +109,7 @@
 		68B735112D70F3EC00D26A37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D817C6BA2EBC62A1000A3E86 /* DownloadSettingsView.swift */,
 				D8B339512EBA55E500C80D44 /* SettingsPanel.swift */,
 				D8B339522EBA55E500C80D44 /* StreakView.swift */,
 				68B735262D70FA4800D26A37 /* PDFViewerScreen.swift */,
@@ -127,6 +136,17 @@
 				68B7352A2D70FB2900D26A37 /* PDFViewer.swift */,
 			);
 			path = UIViewRepresentable;
+			sourceTree = "<group>";
+		};
+		D817C6AE2EBC2B0F000A3E86 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D817C6B42EBC3B6B000A3E86 /* PDFPackManager.swift */,
+				D817C6B22EBC2EAD000A3E86 /* PDFDownloadManager.swift */,
+				D817C6B02EBC2E07000A3E86 /* S3Service.swift */,
+				D817C6AD2EBC2B0F000A3E86 /* PDFStorageManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +212,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				68B08C5E2D765AC300DF5E6A /* Jinendra Archana.pdf in Resources */,
-				6890C06B2D76758800D7FDAD /* PDFs in Resources */,
 				68A91E8A2D6D4F2500155511 /* Preview Assets.xcassets in Resources */,
 				68A91E862D6D4F2500155511 /* Assets.xcassets in Resources */,
 			);
@@ -208,13 +227,18 @@
 				68B735272D70FA4800D26A37 /* PDFViewerScreen.swift in Sources */,
 				D8B339532EBA55E500C80D44 /* SettingsPanel.swift in Sources */,
 				D8B339542EBA55E500C80D44 /* StreakView.swift in Sources */,
+				D817C6B52EBC3B6B000A3E86 /* PDFPackManager.swift in Sources */,
 				68B735252D70F95C00D26A37 /* FavoritesSelectionView.swift in Sources */,
+				D817C6AF2EBC2B0F000A3E86 /* PDFStorageManager.swift in Sources */,
+				D817C6B32EBC2EAD000A3E86 /* PDFDownloadManager.swift in Sources */,
+				D817C6B12EBC2E07000A3E86 /* S3Service.swift in Sources */,
 				685DE4322D8B577E00903DD2 /* FeedbackView.swift in Sources */,
 				68B735232D70F90500D26A37 /* favoritesView.swift in Sources */,
 				D8B339562EBA589E00C80D44 /* AppOpenTracker.swift in Sources */,
 				68A91E842D6D4F2400155511 /* ContentView.swift in Sources */,
 				68A91E822D6D4F2400155511 /* JinendraArchanaApp.swift in Sources */,
 				68B735292D70FA9800D26A37 /* BookListView.swift in Sources */,
+				D817C6BB2EBC62A1000A3E86 /* DownloadSettingsView.swift in Sources */,
 				68B7352B2D70FB2900D26A37 /* PDFViewer.swift in Sources */,
 				68B9DB892D6FADA20013BE8A /* BookData.swift in Sources */,
 			);
